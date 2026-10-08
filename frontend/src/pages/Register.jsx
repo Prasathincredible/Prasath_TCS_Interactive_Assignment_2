@@ -32,7 +32,7 @@ function Register() {
     setLoading(true)
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`,
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/register`,
         {
           method: "POST",
           headers: {
