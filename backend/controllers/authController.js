@@ -6,12 +6,19 @@ const jwt = require("jsonwebtoken")
 const usersFilePath = path.join(__dirname, "../data/users.json")
 
 function getUsers() {
+  if (!fs.existsSync(usersFilePath)) {
+    fs.mkdirSync(path.dirname(usersFilePath), { recursive: true })
+    fs.writeFileSync(usersFilePath, "[]")
+  }
+
   const usersData = fs.readFileSync(usersFilePath, "utf-8")
 
   return JSON.parse(usersData)
 }
 
 function saveUsers(users) {
+  fs.mkdirSync(path.dirname(usersFilePath), { recursive: true })
+
   fs.writeFileSync(
     usersFilePath,
     JSON.stringify(users, null, 2)
