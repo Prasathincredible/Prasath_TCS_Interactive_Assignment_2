@@ -16,7 +16,7 @@ import { Link } from "react-router-dom"
 const menuItems = [
   {
     name: "Home",
-    path: "/",
+    path: "/dashboard",
     icon: Home,
   },
   {

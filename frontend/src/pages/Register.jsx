@@ -58,7 +58,7 @@ function Register() {
       })
 
       setTimeout(() => {
-        navigate("/login")
+        navigate("/")
       }, 1500)
     } catch (error) {
       setError(error.message)
